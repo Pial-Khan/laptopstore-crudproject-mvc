@@ -46,7 +46,7 @@ public class LaptopStoreController {
 	}
 	
 	@PostMapping("/updatelaptop")
-	public String updateStudent(@ModelAttribute("laptop") Laptop laptop, Model model) {
+	public String updateLaptop(@ModelAttribute("laptop") Laptop laptop, Model model) {
 		String id = laptop.getId(); 
 		System.out.println("Hello");
 		//laptopStoreService.updateLaptop(id, laptop);
@@ -56,7 +56,7 @@ public class LaptopStoreController {
 	}
 	
 	@GetMapping("/delete/{id}")
-	public String deleteStudent(@PathVariable("id") String id, Model model) {
+	public String deleteLaptop(@PathVariable("id") String id, Model model) {
 		model.addAttribute("laptops", laptopStoreService.deleteLaptop(id));
 		return "index";
 	}
